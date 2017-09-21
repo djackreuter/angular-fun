@@ -16,3 +16,4 @@ package-lock.json
 package.json
 protractor.conf.js
 tslint.json
+tsconfig.json
