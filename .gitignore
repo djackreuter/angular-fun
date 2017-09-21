@@ -9,3 +9,15 @@
 /npm-debug.log
 /webpack/target.js
 /node_modules/bootstrap
+.angular-cli.json
+.editorconfig
+.gitignore
+README.md
+e2e/
+karma.conf.js
+package-lock.json
+package.json
+protractor.conf.js
+src/
+tsconfig.json
+tslint.json
