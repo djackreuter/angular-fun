@@ -20,11 +20,27 @@ export class UserComponent implements OnInit {
 		this.name = 'John Doe';
 		this.age = 25;
 		this.address = {
-			street: '200 Main St',
+			street: '200 Central Ave',
 			city: 'Albuquerque',
 			state: 'NM'
 		}
 		this.hobbies = ['Listen to music', 'Write code', 'Watch movies'];
+	}
+
+	onClick() {
+		this.name = 'Jane Smith';
+		this.age = 28;
+		this.hobbies.push('Read books');
+		this.address = {
+			street: '405 St Michaels Dr',
+			city: 'Santa Fe',
+			state: 'NM'
+		}
+	}
+
+	addHobby(hobby) {
+		this.hobbies.unshift(hobby);
+		return false;
 	}
 
 }
@@ -32,6 +48,6 @@ export class UserComponent implements OnInit {
 
 interface Address {
 	street: string,
-	city:string,
-	state:string
+	city: string,
+	state: string
 }
