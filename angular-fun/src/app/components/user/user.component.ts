@@ -22,7 +22,7 @@ export class UserComponent implements OnInit {
 		this.address = {
 			street: '200 Main St',
 			city: 'Albuquerque',
-			state: 'New Mexico'
+			state: 'NM'
 		}
 		this.hobbies = ['Listen to music', 'Write code', 'Watch movies'];
 	}
