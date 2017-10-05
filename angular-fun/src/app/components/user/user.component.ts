@@ -43,6 +43,16 @@ export class UserComponent implements OnInit {
 		return false;
 	}
 
+	deleteHobby(hobby) {
+		// loop through hobbies
+		for(let i = 0; i < this.hobbies.length; i++) {
+			// make sure hobby you want to delete is current iteration
+			if(this.hobbies[i] === hobby) {
+				this.hobbies.splice(i, 1);
+			}
+		}
+	}
+
 }
 
 
