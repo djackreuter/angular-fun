@@ -14,6 +14,7 @@ export class UserComponent implements OnInit {
 	address:Address;
 	hobbies:string[];
 	posts:Post[];
+	isEdit:boolean = false;
 
 	// inject service as a dependency into the constructor
 	constructor(private dataService:DataService) {
@@ -62,6 +63,11 @@ export class UserComponent implements OnInit {
 				this.hobbies.splice(i, 1);
 			}
 		}
+	}
+
+	toggleEdit() {
+		// if false sets to true, if true sets to false
+		this.isEdit = !this.isEdit;
 	}
 
 }
