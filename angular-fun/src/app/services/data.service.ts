@@ -1,12 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class DataService {
 
   // inject the http service into the constructor
-  constructor() {
+  constructor(public http:Http) {
     console.log('data service connected...');
+  }
+
+  getPosts() {
+  	return this.http.get('https://jsonplaceholder.typicode.com/posts')
+		.map(res => res.json());
   }
 
 }
