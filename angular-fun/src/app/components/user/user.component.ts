@@ -31,6 +31,7 @@ export class UserComponent implements OnInit {
 	onClick() {
 		this.name = 'Jane Smith';
 		this.age = 28;
+		this.email = 'janesmith@test.com';
 		this.hobbies.push('Read books');
 		this.address = {
 			street: '405 St Michaels Dr',
