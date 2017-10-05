@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+// import data service to component
+import {DataService} from "../../services/data.service";
 
 @Component({
 	selector: 'app-user',
@@ -12,7 +14,8 @@ export class UserComponent implements OnInit {
 	address:Address;
 	hobbies:string[];
 
-	constructor() {
+	// inject service as a dependency into the constructor
+	constructor(private dataService:DataService) {
 	}
 
 	ngOnInit() {
