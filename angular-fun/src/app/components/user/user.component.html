@@ -1,62 +1,76 @@
-<h1>{{name.first}} {{name.last}}</h1>
-<ul>
-	<li>Age: {{age}}</li>
-	<li>Email: {{email}}</li>
-	<li>Address: {{address.street}} {{address.city}}, {{address.state}}</li>
-</ul>
+<div class="container">
+	<h1>{{name.first}} {{name.last}}</h1>
+	<ul>
+		<li>Age: {{age}}</li>
+		<li>Email: {{email}}</li>
+		<li>Address: {{address.street}} {{address.city}}, {{address.state}}</li>
+	</ul>
 
-<button class="btn btn-primary" (click)="onClick();">Change Info</button>
-<button class="btn btn-success" (click)="toggleEdit();">Edit User</button>
+	<button class="btn btn-primary" (click)="onClick();">Change Info</button>
+	<button class="btn btn-success" (click)="toggleEdit();">Edit User</button>
+</div><!-- /.container -->
 
 <div *ngIf="isEdit">
-	<h2 class="headers">Edit User</h2>
-	<form>
-		<div class="form-group">
-			<label for="first">First Name: </label>
-			<input class="form-control" type="text" name="first" [(ngModel)]="name.first">
-		</div>
-		<div class="form-group">
-			<label for="last">Last Name: </label>
-			<input class="form-control" type="text" name="last" [(ngModel)]="name.last">
-		</div>
-		<div class="form-group">
-			<label for="age">Age: </label>
-			<input class="form-control" type="number" name="age" [(ngModel)]="age">
-		</div>
-		<div class="form-group">
-			<label for="email">Email: </label>
-			<input class="form-control" type="text" name="email" [(ngModel)]="email">
-		</div>
-		<div class="form-group">
-			<label for="street">Street: </label>
-			<input class="form-control" type="text" name="street" [(ngModel)]="address.street">
-		</div>
-		<div class="form-group">
-			<label for="city">City: </label>
-			<input class="form-control" type="text" name="city" [(ngModel)]="address.city">
-		</div>
-		<div class="form-group">
-			<label for="state">State: </label>
-			<input class="form-control" type="text" name="state" [(ngModel)]="address.state">
-		</div>
+	<div class="container">
+		<h2 class="headers">Edit User</h2>
+		<form>
+			<div class="form-row">
+				<div class="form-group col">
+					<label for="first">First Name: </label>
+					<input class="form-control" type="text" name="first" [(ngModel)]="name.first">
+				</div>
+				<div class="form-group col">
+					<label for="last">Last Name: </label>
+					<input class="form-control" type="text" name="last" [(ngModel)]="name.last">
+				</div>
+			</div><!-- /.form-row -->
+			<div class="form-row">
+				<div class="form-group col-3">
+					<label for="age">Age: </label>
+					<input class="form-control" type="number" name="age" [(ngModel)]="age">
+				</div>
+				<div class="form-group col">
+					<label for="email">Email: </label>
+					<input class="form-control" type="text" name="email" [(ngModel)]="email">
+				</div>
+			</div><!-- /.form-row -->
+			<div class="form-group">
+				<label for="street">Address: </label>
+				<input class="form-control" type="text" name="street" [(ngModel)]="address.street">
+			</div>
+			<div class="form-row">
+				<div class="form-group col-3">
+					<label for="city">City: </label>
+					<input class="form-control" type="text" name="city" [(ngModel)]="address.city">
+				</div>
+				<div class="form-group col">
+					<label for="state">State: </label>
+					<input class="form-control" type="text" name="state" [(ngModel)]="address.state">
+				</div>
+			</div><!-- /.form-row -->
+		</form>
+	</div><!-- /.container -->
+</div>
+
+<div class="container">
+	<h2 class="headers">Hobbies</h2>
+	<form (submit)="addHobby(hobby.value);">
+		<div class="form-row">
+			<div class="form-group col-4">
+				<label for="hobby">Hobby:</label>
+				<input class="form-control" type="text" #hobby>
+			</div>
+		</div><!-- /.form-row -->
 	</form>
-</div>
+	<ul>
+		<li *ngFor="let hobby of hobbies">{{hobby}}
+			<button type="button" class="btn btn-link" (click)="deleteHobby(hobby);">X</button>
+		</li>
+	</ul>
 
-<h2 class="headers">Hobbies</h2>
-<form (submit)="addHobby(hobby.value);">
-	<div class="form-group">
-		<label for="hobby">Hobby:</label>
-		<input class="form-control" type="text" #hobby>
+	<h2>Posts</h2>
+	<div *ngFor="let post of posts">
+		<p><strong>{{post.title}}</strong></p>
+		<p>{{post.body}}</p>
 	</div>
-</form>
-<ul>
-	<li *ngFor="let hobby of hobbies">{{hobby}}
-		<button type="button" class="btn btn-link" (click)="deleteHobby(hobby);">X</button>
-	</li>
-</ul>
-
-<h2>Posts</h2>
-<div *ngFor="let post of posts">
-	<p><strong>{{post.title}}</strong></p>
-	<p>{{post.body}}</p>
-</div>
+</div><!-- /.container -->
