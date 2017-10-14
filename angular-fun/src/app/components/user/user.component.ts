@@ -8,7 +8,7 @@ import {DataService} from "../../services/data.service";
 	styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-	name: string;
+	name: object;
 	age: number;
 	email: string;
 	address:Address;
@@ -22,7 +22,10 @@ export class UserComponent implements OnInit {
 
 	ngOnInit() {
 
-		this.name = 'John Doe';
+		this.name = {
+			first: 'John',
+			last: 'Smith'
+		}
 		this.age = 25;
 		this.email = 'johndoe@test.com';
 		this.address = {
@@ -39,7 +42,10 @@ export class UserComponent implements OnInit {
 	}
 
 	onClick() {
-		this.name = 'Jane Smith';
+		this.name = {
+			first: 'Jane',
+			last: 'Smith'
+		}
 		this.age = 28;
 		this.email = 'janesmith@test.com';
 		this.hobbies.push('Read books');
