@@ -1,9 +1,0 @@
-li {
-	list-style: none;
-}
-
-li a:hover {
-	text-decoration: none;
-	font-weight: bold;
-	color: dodgerblue;
-}
